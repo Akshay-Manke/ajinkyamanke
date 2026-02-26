@@ -4,9 +4,18 @@
   <meta charset="UTF-8">
   <title>Ajinkya Manke</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Google Font -->
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+
+  <!-- SEO + Social -->
+  <meta name="description" content="Ajinkya Manke — Driven by passion. Inspired by sport. Built for greatness.">
+  <meta property="og:title" content="Ajinkya Manke">
+  <meta property="og:description" content="Built for greatness. Driven by passion.">
+  <meta property="og:type" content="website">
 
   <style>
     * {
@@ -21,7 +30,9 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      background: linear-gradient(135deg, #000000, #0a0a0a, #111111);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
       color: #e5e5e5;
       font-family: 'Inter', sans-serif;
       overflow: hidden;
@@ -38,10 +49,18 @@
       font-family: 'Playfair Display', serif;
       font-size: 3.5rem;
       letter-spacing: 3px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       background: linear-gradient(to right, #ffffff, #bbbbbb);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    .accent-line {
+      width: 120px;
+      height: 2px;
+      margin: 20px auto;
+      background: linear-gradient(to right, #ffffff, #888888);
+      box-shadow: 0 0 8px rgba(255,255,255,0.4);
     }
 
     .tagline {
@@ -68,6 +87,12 @@
       to { opacity: 1; }
     }
 
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2.4rem;
@@ -83,9 +108,12 @@
 
   <div class="container">
     <h1>AJINKYA MANKE</h1>
+    <div class="accent-line"></div>
+
     <div class="tagline">
       Built for greatness. Driven by passion.
     </div>
+
     <div class="traits">
       Emotionally strong. Intellectually sharp.<br>
       Inspired by sport. Fascinated by performance machines.
