@@ -2,117 +2,235 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ajinkya Manke</title>
+<title>★ Ajinkya Manke</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
-<meta name="description" content="Ajinkya Manke — Driven by passion. Inspired by sport. Built for greatness.">
-
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Inter', sans-serif;
-  background: #000;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0f14;
   color: #e5e5e5;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
+/* PARTICLE CANVAS */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* HERO */
 .hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 80px 20px 40px;
-  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  padding: 20px;
+  z-index: 1;
 }
 
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  letter-spacing: 3px;
-  background: linear-gradient(to right, #ffffff, #bbbbbb);
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin: 0;
+  background: linear-gradient(90deg, #ffffff, #c0c0c0, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: slideUp 1.5s ease forwards;
 }
 
-.tagline {
-  margin-top: 20px;
-  font-size: 1.3rem;
-  color: #aaa;
+.hero h2 {
+  font-weight: 300;
+  margin-top: 15px;
+  color: #cccccc;
+  animation: slideUp 2s ease forwards;
 }
 
-.traits {
+.hero p {
+  max-width: 800px;
   margin-top: 20px;
+  font-size: 1.1rem;
+  color: #bbbbbb;
+  animation: slideUp 2.5s ease forwards;
+}
+
+/* GALLERY */
+.gallery {
+  padding: 80px 10%;
+  background: #0f1720;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  animation: cardFade 1.5s ease forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.3s; }
+.card:nth-child(2) { animation-delay: 0.6s; }
+.card:nth-child(3) { animation-delay: 0.9s; }
+.card:nth-child(4) { animation-delay: 1.2s; }
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #0a0f14;
   font-size: 1rem;
   color: #888;
-  line-height: 1.7;
+  position: relative;
+  z-index: 1;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
+footer span {
+  color: #ff4d6d;
 }
 
-.gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* ANIMATIONS */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+@keyframes cardFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.3rem;
-  }
+@media(max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  .hero { background-attachment: scroll; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<canvas id="stars"></canvas>
+
+<section class="hero">
   <h1>AJINKYA MANKE</h1>
-  <div class="tagline">Built for greatness. Driven by passion.</div>
-  <div class="traits">
-    Emotionally strong. Intellectually sharp.<br>
+  <h2>Built for Greatness. Driven by Passion.</h2>
+  <p>
+    Emotionally strong. Intellectually sharp.  
     Inspired by sport. Fascinated by performance machines.
+  </p>
+</section>
+
+<section class="gallery">
+  <h2>Performance Machines</h2>
+  <div class="gallery-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1974&auto=format&fit=crop">
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=1974&auto=format&fit=crop">
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?q=80&w=1974&auto=format&fit=crop">
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1974&auto=format&fit=crop">
+    </div>
   </div>
-</div>
+</section>
 
-<div class="gallery">
-  <!-- Premium Sports Cars -->
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Luxury Sports Car">
-  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="Premium Supercar">
-  <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Modern Supercar">
+<footer>
+  Crafted with pride by his father <span>❤</span>
+</footer>
 
-  <!-- Racing Cars -->
-  <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023" alt="Racing Car">
-  <img src="https://images.unsplash.com/photo-1517026575980-3e1e2dede0d5" alt="Formula Racing Car">
-  <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Track Racing Car">
-</div>
+<script>
+const canvas = document.getElementById("stars");
+const ctx = canvas.getContext("2d");
 
-<div class="footer">
-  Crafted with pride by his father ❤️
-</div>
+let stars = [];
+let numStars = 120;
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+for (let i = 0; i < numStars; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.2,
+    velocity: Math.random() * 0.3
+  });
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "white";
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+  });
+}
+
+function updateStars() {
+  stars.forEach(star => {
+    star.y += star.velocity;
+    if (star.y > canvas.height) {
+      star.y = 0;
+      star.x = Math.random() * canvas.width;
+    }
+  });
+}
+
+function animate() {
+  drawStars();
+  updateStars();
+  requestAnimationFrame(animate);
+}
+animate();
+</script>
 
 </body>
 </html>
