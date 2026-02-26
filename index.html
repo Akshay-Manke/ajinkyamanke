@@ -1,44 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ajinkya Manke</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
-}
-.container {
-    max-width: 600px;
-}
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-footer {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Ajinkya Manke</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: radial-gradient(circle at top, #111 0%, #000 60%);
+      color: #e5e5e5;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      animation: fadeIn 2s ease forwards;
+      opacity: 0;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #ffffff, #bbbbbb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tagline {
+      font-size: 1.3rem;
+      color: #aaaaaa;
+      margin-bottom: 30px;
+    }
+
+    .traits {
+      font-size: 1rem;
+      color: #888;
+      line-height: 1.8;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.4rem;
+      }
+      .tagline {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-<h1>Ajinkya Manke</h1>
-<p>This digital space is reserved for the future.</p>
-<footer>Built with love by his father ❤️</footer>
-</div>
+
+  <div class="container">
+    <h1>AJINKYA MANKE</h1>
+    <div class="tagline">
+      Built for greatness. Driven by passion.
+    </div>
+    <div class="traits">
+      Emotionally strong. Intellectually sharp.<br>
+      Inspired by sport. Fascinated by performance machines.
+    </div>
+  </div>
+
+  <div class="footer">
+    Crafted with pride by his father ❤️
+  </div>
+
 </body>
 </html>
