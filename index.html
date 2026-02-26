@@ -1,128 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ajinkya Manke</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ajinkya Manke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1828/1828884.png">
+<meta name="description" content="Ajinkya Manke — Driven by passion. Inspired by sport. Built for greatness.">
 
-  <!-- SEO + Social -->
-  <meta name="description" content="Ajinkya Manke — Driven by passion. Inspired by sport. Built for greatness.">
-  <meta property="og:title" content="Ajinkya Manke">
-  <meta property="og:description" content="Built for greatness. Driven by passion.">
-  <meta property="og:type" content="website">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #e5e5e5;
+}
 
-    body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: linear-gradient(135deg, #000000, #0a0a0a, #111111);
-      background-size: 400% 400%;
-      animation: gradientMove 12s ease infinite;
-      color: #e5e5e5;
-      font-family: 'Inter', sans-serif;
-      overflow: hidden;
-    }
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+}
 
-    .container {
-      animation: fadeIn 2s ease forwards;
-      opacity: 0;
-      max-width: 800px;
-      padding: 20px;
-    }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  background: linear-gradient(to right, #ffffff, #bbbbbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.5rem;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-      background: linear-gradient(to right, #ffffff, #bbbbbb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+.tagline {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #aaa;
+}
 
-    .accent-line {
-      width: 120px;
-      height: 2px;
-      margin: 20px auto;
-      background: linear-gradient(to right, #ffffff, #888888);
-      box-shadow: 0 0 8px rgba(255,255,255,0.4);
-    }
+.traits {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.7;
+}
 
-    .tagline {
-      font-size: 1.3rem;
-      color: #aaaaaa;
-      margin-bottom: 30px;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .traits {
-      font-size: 1rem;
-      color: #888;
-      line-height: 1.8;
-    }
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
-    .footer {
-      position: absolute;
-      bottom: 20px;
-      width: 100%;
-      font-size: 0.9rem;
-      color: #666;
-    }
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.9rem;
+  color: #666;
+}
 
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.4rem;
-      }
-      .tagline {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>AJINKYA MANKE</h1>
-    <div class="accent-line"></div>
-
-    <div class="tagline">
-      Built for greatness. Driven by passion.
-    </div>
-
-    <div class="traits">
-      Emotionally strong. Intellectually sharp.<br>
-      Inspired by sport. Fascinated by performance machines.
-    </div>
+<div class="hero">
+  <h1>AJINKYA MANKE</h1>
+  <div class="tagline">Built for greatness. Driven by passion.</div>
+  <div class="traits">
+    Emotionally strong. Intellectually sharp.<br>
+    Inspired by sport. Fascinated by performance machines.
   </div>
+</div>
 
-  <div class="footer">
-    Crafted with pride by his father ❤️
-  </div>
+<div class="gallery">
+  <!-- Premium Sports Cars -->
+  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Luxury Sports Car">
+  <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="Premium Supercar">
+  <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Modern Supercar">
+
+  <!-- Racing Cars -->
+  <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023" alt="Racing Car">
+  <img src="https://images.unsplash.com/photo-1517026575980-3e1e2dede0d5" alt="Formula Racing Car">
+  <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Track Racing Car">
+</div>
+
+<div class="footer">
+  Crafted with pride by his father ❤️
+</div>
 
 </body>
 </html>
